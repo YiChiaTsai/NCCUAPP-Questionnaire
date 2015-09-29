@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>行動政大APP-使用經驗之問卷調查</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-theme.css">
+<link href='https://fonts.googleapis.com/css?family=Raleway:900' rel='stylesheet' type='text/css'>
+<!-- <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
+<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script></head>
+
+<body>
+
+<!-- ----------------------------------------------------------------- -->
+
+<div class="container">
+
+	<div class="row">
+	<div class="col-sm-12">
+		<header class="headerline">
+			<h1 align="center">問卷 (Questionnaire)</h1>
+			<br>
+		</header>
+	</div>
+	</div>
+
+	<div class="row">
+	<div class="col-sm-2">
+			<button class="btn-primary" id="Chi">繁體中文</button>
+			<button class="btn-success" id="Eng">English</button>
+	</div>
+	</div>
+
+	<div class="row panel panel-primary">
+	  <div class="panel-heading"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 行動政大APP-使用經驗之問卷調查</div>
+	  <div class="panel-body">
+			請您就使用此行動政大APP的經驗，提供我們一些問卷回饋，將有助於我們改善得更好！
+	  </div>
+	</div>
+
+<div class="row">
+<form class="form-horizontal" role="FormofNCCUAPP" novalidate oninput="total.value = (courses.valueAsNumber * 1020 * 3)">
+	<div class="form-group">
+		<label class="col-sm-2 control-label" id="name">1. 全名:</label>
+		<div class="col-sm-3">
+			<input  type="text" class="form-control" id="full_name" name="full_name" placeholder="Richard Tsai" required>
+		</div>
+	</div>
+
+	<!-- 單選 -->
+	<div class="form-group">
+		<label class="col-sm-2 control-label" id="gender">2. 性別:</label><br>
+		<div class="col-sm-4">
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="gender" id="optionsRadios1" value="option1" checked="">
+			      男生 (Male)
+			  </label>
+			</div>
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="gender" id="optionsRadios2" value="option2">
+			      女生 (Female)
+			  </label>
+			</div>
+			<!-- <label class="radio-inline"><input type="radio" class="form-control" name="sex" value="r0">Male</label><br>
+			<label class="radio-inline"><input type="radio" class="form-control" name="sex" value="r1">Female</label> -->
+		</div>
+	</div>
+
+
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label" id="email1">3. 電子郵件地址:</label>
+		<div class="col-sm-3">
+			<input type="email" class="form-control" id="email_addr" name="email_addr" placeholder="ex: xxx@gmail.com" required>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label" id="email2">4. 請再確認電子郵件:</label>
+		<div class="col-sm-3">
+			<input type="email" class="form-control" id="email_addr_repeat" name="email_addr_repeat" placeholder="ex: xxx@gmail.com" required
+			oninput="verifyEmail(this)">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label" id="birth">5. 生日:</label>
+		<div class="col-sm-3">
+			<input type="date" class="form-control" id="birth_dt" name="birth_dt" placeholder="mm-dd-yyyy" required>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label" id="phonenum">6. 手機號碼:</label>
+		<div class="col-sm-3">
+			<input type="tel" class="form-control" id="phone" name="phone" maxlength="10" pattern="[0-9]{10}" placeholder="09xx-xxx-xxx" required>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label" id="age">7. 年齡:</label>
+		<div class="col-sm-3">
+			<input type="number" class="form-control" id="ages" name="ages" value="20" min="1" max="100" required>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label" id="website">8. 個人網頁:</label>
+		<div class="col-sm-3">
+			<input type="url" class="form-control" id="web" name="web"
+			title="Personal website is not neccessory if you don't have one.">
+		</div>
+	</div>
+
+	<!-- 複選 -->
+	<div class="form-group">
+		<label class="col-sm-2 control-label" id="commute">9. 平常到政大的通勤工具:</label><br>
+		<div class="col-sm-2">
+			<input type="checkbox" id="chk_btn1" value="c0">
+			<label for="chk_btn1" id="chk_lbl1">腳踏車 (Bicycle)</label><br>
+			<input type="checkbox" id="chk_btn2" value="c1">
+			<label for="chk_btn2" id="chk_lbl2">機車 (Motorcycle)</label><br>
+			<input type="checkbox" id="chk_btn3" value="c2">
+			<label for="chk_btn3" id="chk_lbl3">汽車 (Car)</label><br>
+			<input type="checkbox" id="chk_btn4" value="c3">
+			<label for="chk_btn4" id="chk_lbl4">公車 (Bus)</label><br>
+			<input type="checkbox" id="chk_btn5" value="c4">
+			<label for="chk_btn5" id="chk_lbl5">捷運 (MRT)</label><br>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label" id="coursenum">10. 修課數目:</label>
+		<div class="col-sm-3">
+			<input type="number" class="form-control" id="courses" name="courses" value="0" min="1" max="20" required>
+		</div>
+	</div>
+
+	<form class="form-inline">
+		<div class="form-group">
+
+			<label class="col-sm-2 control-label" id="fee">總修課費用:</label>
+			<div class="col-sm-3">
+				<div class="input-group">
+					<div class="input-group-addon">NT$</div>
+					<output class="form-control" id="total" name="total">Fee</output>
+					<div class="input-group-addon">.00</div>
+				</div>
+			</div>
+
+		</div>
+	</form>
+	<br>
+
+	<div class="row table-responsive">
+	<div class="col-sm-6">
+	<table class="table table-bordered" cellspacing="0">
+		<!-- <caption id="title2"> -->
+			<label class="control-label" id="feeling">11. 關於行動政大APP v2.:</label>
+						<!-- <span id="req_2" class="req">*</span>
+					</caption> -->
+		<thead>
+			<tr>
+				<!-- &nbsp; -->
+				<th>#</th>
+								<td>Strongly Disagree</td>
+								<td>Disagree</td>
+								<td>Agree</td>
+								<td>Strongly Agree</td>
+								<td class="na">N/A</td>
+							</tr>
+		</thead>
+		<tbody>
+						<tr class="statement2">
+				<th><label for="Field2">It's ruining web design</label></th>
+								<td title="Strongly Disagree">
+					<input id="Field2_1" name="Field2" type="radio" tabindex="9" value="Strongly Disagree" onchange="handleInput(this);"/>
+					<label for="Field2_1"></label>
+				</td>
+								<td title="Disagree">
+					<input id="Field2_2" name="Field2" type="radio" tabindex="10" value="Disagree" onchange="handleInput(this);"/>
+					<label for="Field2_2"></label>
+				</td>
+								<td title="Agree">
+					<input id="Field2_3" name="Field2" type="radio" tabindex="11" value="Agree" onchange="handleInput(this);"/>
+					<label for="Field2_3"></label>
+				</td>
+								<td title="Strongly Agree">
+					<input id="Field2_4" name="Field2" type="radio" tabindex="12" value="Strongly Agree" onchange="handleInput(this);"/>
+					<label for="Field2_4"></label>
+				</td>
+								<td title="N/A" class="na">
+					<input id="Field2_5" name="Field2" type="radio" tabindex="13" value="N/A" onchange="handleInput(this);"/>
+					<label for="Field2_5"></label>
+				</td>
+							</tr>
+						<tr class="alt statement3">
+				<th><label for="Field3">It's improving user experience</label></th>
+								<td title="Strongly Disagree">
+					<input id="Field3_1" name="Field3" type="radio" tabindex="14" value="Strongly Disagree" onchange="handleInput(this);"/>
+					<label for="Field3_1"></label>
+				</td>
+								<td title="Disagree">
+					<input id="Field3_2" name="Field3" type="radio" tabindex="15" value="Disagree" onchange="handleInput(this);"/>
+					<label for="Field3_2"></label>
+				</td>
+								<td title="Agree">
+					<input id="Field3_3" name="Field3" type="radio" tabindex="16" value="Agree" onchange="handleInput(this);"/>
+					<label for="Field3_3"></label>
+				</td>
+								<td title="Strongly Agree">
+					<input id="Field3_4" name="Field3" type="radio" tabindex="17" value="Strongly Agree" onchange="handleInput(this);"/>
+					<label for="Field3_4"></label>
+				</td>
+								<td title="N/A" class="na">
+					<input id="Field3_5" name="Field3" type="radio" tabindex="18" value="N/A" onchange="handleInput(this);"/>
+					<label for="Field3_5"></label>
+				</td>
+							</tr>
+						<tr class="statement4">
+				<th><label for="Field4">It's making all websites look the same</label></th>
+								<td title="Strongly Disagree">
+					<input id="Field4_1" name="Field4" type="radio" tabindex="19" value="Strongly Disagree" onchange="handleInput(this);"/>
+					<label for="Field4_1"></label>
+				</td>
+								<td title="Disagree">
+					<input id="Field4_2" name="Field4" type="radio" tabindex="20" value="Disagree" onchange="handleInput(this);"/>
+					<label for="Field4_2"></label>
+				</td>
+								<td title="Agree">
+					<input id="Field4_3" name="Field4" type="radio" tabindex="21" value="Agree" onchange="handleInput(this);"/>
+					<label for="Field4_3"></label>
+				</td>
+								<td title="Strongly Agree">
+					<input id="Field4_4" name="Field4" type="radio" tabindex="22" value="Strongly Agree" onchange="handleInput(this);"/>
+					<label for="Field4_4"></label>
+				</td>
+								<td title="N/A" class="na">
+					<input id="Field4_5" name="Field4" type="radio" tabindex="23" value="N/A" onchange="handleInput(this);"/>
+					<label for="Field4_5"></label>
+				</td>
+							</tr>
+						<tr class="alt statement5">
+				<th><label for="Field5">It's stifling creativity</label></th>
+								<td title="Strongly Disagree">
+					<input id="Field5_1" name="Field5" type="radio" tabindex="24" value="Strongly Disagree" onchange="handleInput(this);"/>
+					<label for="Field5_1"></label>
+				</td>
+								<td title="Disagree">
+					<input id="Field5_2" name="Field5" type="radio" tabindex="25" value="Disagree" onchange="handleInput(this);"/>
+					<label for="Field5_2"></label>
+				</td>
+								<td title="Agree">
+					<input id="Field5_3" name="Field5" type="radio" tabindex="26" value="Agree" onchange="handleInput(this);"/>
+					<label for="Field5_3"></label>
+				</td>
+								<td title="Strongly Agree">
+					<input id="Field5_4" name="Field5" type="radio" tabindex="27" value="Strongly Agree" onchange="handleInput(this);"/>
+					<label for="Field5_4"></label>
+				</td>
+								<td title="N/A" class="na">
+					<input id="Field5_5" name="Field5" type="radio" tabindex="28" value="N/A" onchange="handleInput(this);"/>
+					<label for="Field5_5"></label>
+				</td>
+							</tr>
+						<tr class="statement6">
+				<th><label for="Field6">It's making my life easier</label></th>
+								<td title="Strongly Disagree">
+					<input id="Field6_1" name="Field6" type="radio" tabindex="29" value="Strongly Disagree" onchange="handleInput(this);"/>
+					<label for="Field6_1"></label>
+				</td>
+								<td title="Disagree">
+					<input id="Field6_2" name="Field6" type="radio" tabindex="30" value="Disagree" onchange="handleInput(this);"/>
+					<label for="Field6_2"></label>
+				</td>
+								<td title="Agree">
+					<input id="Field6_3" name="Field6" type="radio" tabindex="31" value="Agree" onchange="handleInput(this);"/>
+					<label for="Field6_3"></label>
+				</td>
+								<td title="Strongly Agree">
+					<input id="Field6_4" name="Field6" type="radio" tabindex="32" value="Strongly Agree" onchange="handleInput(this);"/>
+					<label for="Field6_4"></label>
+				</td>
+								<td title="N/A" class="na">
+					<input id="Field6_5" name="Field6" type="radio" tabindex="33" value="N/A" onchange="handleInput(this);"/>
+					<label for="Field6_5"></label>
+				</td>
+							</tr>
+						<tr class="alt statement7">
+				<th><label for="Field7">It's easy to work with</label></th>
+								<td title="Strongly Disagree">
+					<input id="Field7_1" name="Field7" type="radio" tabindex="34" value="Strongly Disagree" onchange="handleInput(this);"/>
+					<label for="Field7_1"></label>
+				</td>
+								<td title="Disagree">
+					<input id="Field7_2" name="Field7" type="radio" tabindex="35" value="Disagree" onchange="handleInput(this);"/>
+					<label for="Field7_2"></label>
+				</td>
+								<td title="Agree">
+					<input id="Field7_3" name="Field7" type="radio" tabindex="36" value="Agree" onchange="handleInput(this);"/>
+					<label for="Field7_3"></label>
+				</td>
+								<td title="Strongly Agree">
+					<input id="Field7_4" name="Field7" type="radio" tabindex="37" value="Strongly Agree" onchange="handleInput(this);"/>
+					<label for="Field7_4"></label>
+				</td>
+								<td title="N/A" class="na">
+					<input id="Field7_5" name="Field7" type="radio" tabindex="38" value="N/A" onchange="handleInput(this);"/>
+					<label for="Field7_5"></label>
+				</td>
+							</tr>
+						<tr class="statement8">
+				<th><label for="Field8">There are too many sites using it</label></th>
+								<td title="Strongly Disagree">
+					<input id="Field8_1" name="Field8" type="radio" tabindex="39" value="Strongly Disagree" onchange="handleInput(this);"/>
+					<label for="Field8_1"></label>
+				</td>
+								<td title="Disagree">
+					<input id="Field8_2" name="Field8" type="radio" tabindex="40" value="Disagree" onchange="handleInput(this);"/>
+					<label for="Field8_2"></label>
+				</td>
+								<td title="Agree">
+					<input id="Field8_3" name="Field8" type="radio" tabindex="41" value="Agree" onchange="handleInput(this);"/>
+					<label for="Field8_3"></label>
+				</td>
+								<td title="Strongly Agree">
+					<input id="Field8_4" name="Field8" type="radio" tabindex="42" value="Strongly Agree" onchange="handleInput(this);"/>
+					<label for="Field8_4"></label>
+				</td>
+								<td title="N/A" class="na">
+					<input id="Field8_5" name="Field8" type="radio" tabindex="43" value="N/A" onchange="handleInput(this);"/>
+					<label for="Field8_5"></label>
+				</td>
+							</tr>
+					</tbody>
+	</table>
+	</div>
+	</div>
+
+	<div class="row">
+	<div class="col-sm-6">
+		<label class="control-label" id="opinion">12. 想對我們說？</label>
+		<textarea class="form-control" rows="3"></textarea>
+	</div>
+	</div>
+	<br>
+
+	<div class="row">
+	<div class="col-sm-6">
+	<label class="control-label" id="rate">13. 給個評價吧!</label>
+	<select class="form-control">
+	  <option>  0%</option>
+	  <option> 20%</option>
+	  <option> 40%</option>
+	  <option> 60%</option>
+	  <option> 80%</option>
+		<option>100%</option>
+	</select>
+	</div>
+	</div>
+
+	<br><br>
+
+	<div class="progress">
+	<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+		60%
+	</div>
+	</div>
+
+	<nav>
+	  <ul class="pager">
+	    <li><a href="#">Previous</a></li>
+	    <li><a href="#">Next</a></li>
+	  </ul>
+	</nav>
+
+	<div class="col-sm-offset-5 col-sm-2">
+			<input id="submit" class="btn-danger form-control" type="submit" value="Submit"></input>
+	</div>
+	<br>
+	<br>
+
+	<div id="myAlert" class="alert alert-success fade flash" data-alert="alert">
+	    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	    <strong>Well done!</strong>
+			You successfully complete this questionnaire of 行動政大APP.
+	</div>
+
+</form>
+</div>
+
+</div>
+
+<script>
+function verifyEmail(input) {
+	input = input.srcElement;
+	if (input.value != document.getElementById('email_addr').value) {
+		input.setCustomValidity('The two email addresses must match.');
+	} else {
+		// input is valid -- reset the error message
+		input.setCustomValidity('');
+	}
+}
+</script>
+
+<script>
+  function showAlert(){
+    $("#myAlert").addClass("in")
+	}
+	function closeAlert(){
+		$(".flash").fadeTo(500, 0).slideUp(500, function(){
+		      $(this).removeclass("in");
+		});
+	}
+	$('#submit').click(function() {
+    showAlert();
+		setTimeout(closeAlert, 3000);
+	});
+
+
+// <!-- window.setTimeout(function() {
+//   $(".flash").fadeTo(500, 0).slideUp(500, function(){
+//       $(this).toggle();
+//   });
+// }, 5000); -->
+</script>
+
+<script>
+$('#Chi').click(function() {
+	$('.panel-heading').html( "行動政大APP-使用經驗之問卷調查" );
+	$('.panel-body').text( "請您就使用此行動政大APP的經驗，提供我們一些問卷回饋，將有助於我們改善得更好！" );
+	$('#name').text( "1. 全名:" );
+	$('#gender').text( "2. 性別:" );
+	$('#email1').text( "3. 電子郵件地址:" );
+	$('#email2').text( "4. 請再確認電子郵件:" );
+	$('#birth').text( "5. 生日:" );
+	$('#phonenum').text( "6. 手機號碼:" );
+	$('#age').text( "7. 年齡:" );
+	$('#website').text( "8. 個人網頁:" );
+	$('#commute').text( "9. 平常到政大的通勤工具:" );
+	$('#coursenum').text( "10. 修課數目:" );
+	$('#fee').text( "總修課費用:" );
+	$('#feeling').text( "11. 關於行動政大APP v2.:" );
+	$('#opinion').text( "12. 想對我們說？" );
+	$('#rate').text( "13. 給個評價吧！" );
+});
+$('#Eng').click(function() {
+	$('.panel-heading').html( "行動政大APP-The questionnaire of use experience" );
+	$('.panel-body').text( "After you use this app, please give some feedback which will help us to improve it well!" );
+	$('#name').text( "1. Full name:" );
+	$('#gender').text( "2. Gender:" );
+	$('#email1').text( "3. Email address:" );
+	$('#email2').text( "4. Repeat email address:" );
+	$('#birth').text( "5. Birthday:" );
+	$('#phonenum').text( "6. Phone Number:" );
+	$('#age').text( "7. Age:" );
+	$('#website').text( "8. Personal Website:" );
+	$('#commute').text( "9. Which transportation do you take to NCCU:" );
+	$('#coursenum').text( "10. How many courses will you take:" );
+	$('#fee').text( "Estimated total fee:" );
+	$('#feeling').text( "11. How do you feel about 行動政大APP v2.:" );
+	$('#opinion').text( "12. Do you want to say something to us?" );
+	$('#rate').text( "13. Rate us!" );
+});
+</script>
+
+<br>
+<!-- ------------------------------------------------------------------->
+<!-- <footer>
+	<img src="http://ameydhar.github.io/index_files/teaching.jpg" alt="程式語言集合"><br>
+	<a href="http://en.wikipedia.org/wiki/Programming_language" (target="_blank")>程式語言定義？ WikiPedia it！</a>
+	<div class="social-buttons">
+		<a href="http://www.facebook.com.tw">讚</a> | <a href="http://www.youtube.com.tw">+1</a>
+	</div>
+</footer> -->
+
+<footer>
+	<p>Design by RichardTsai. Copyright (c) 2015 nccu.edu.tw. All rights reserved. </P>
+</footer>
+</body>
+</html>
