@@ -40,28 +40,30 @@
 	  </div>
 	</div>
 
+<!-- action="demo_form.asp" method="post" -->
+<!-- novalidate oninput="total.value = (courses.valueAsNumber * 1020 * 3)" -->
 <div class="row">
-<form class="form-horizontal" role="FormofNCCUAPP" novalidate oninput="total.value = (courses.valueAsNumber * 1020 * 3)">
+<form class="form-horizontal" role="FormofNCCUAPP">
 	<div class="form-group">
-		<label class="col-sm-2 control-label" id="name">1. 全名:</label>
+		<label for="full_name" class="col-sm-2 control-label" id="name">1. 全名:</label>
 		<div class="col-sm-3">
-			<input  type="text" class="form-control" id="full_name" name="full_name" placeholder="Richard Tsai" required>
+			<input  type="text" class="form-control" id="full_name" name="fname" placeholder="Richard Tsai" required>
 		</div>
 	</div>
 
 	<!-- 單選 -->
 	<div class="form-group">
-		<label class="col-sm-2 control-label" id="gender">2. 性別:</label><br>
+		<label class="col-sm-2 control-label" id="gender">2. 性別:</label>
 		<div class="col-sm-4">
 			<div class="radio">
 			  <label>
-			    <input type="radio" name="gender" id="optionsRadios1" value="option1" checked="">
+			    <input type="radio" name="fgender" id="optionsRadios1" value="male" checked="">
 			      男生 (Male)
 			  </label>
 			</div>
 			<div class="radio">
 			  <label>
-			    <input type="radio" name="gender" id="optionsRadios2" value="option2">
+			    <input type="radio" name="fgender" id="optionsRadios2" value="female">
 			      女生 (Female)
 			  </label>
 			</div>
@@ -73,45 +75,45 @@
 
 
 	<div class="form-group">
-		<label class="col-sm-2 control-label" id="email1">3. 電子郵件地址:</label>
+		<label for="email_addr" class="col-sm-2 control-label" id="email1">3. 電子郵件地址:</label>
 		<div class="col-sm-3">
-			<input type="email" class="form-control" id="email_addr" name="email_addr" placeholder="ex: xxx@gmail.com" required>
+			<input type="email" class="form-control" id="email_addr" name="femail_addr" placeholder="ex: xxx@gmail.com" required>
 		</div>
 	</div>
 
 	<div class="form-group">
-		<label class="col-sm-2 control-label" id="email2">4. 請再確認電子郵件:</label>
+		<label for="email_addr_repeat" class="col-sm-2 control-label" id="email2">4. 請再確認電子郵件:</label>
 		<div class="col-sm-3">
-			<input type="email" class="form-control" id="email_addr_repeat" name="email_addr_repeat" placeholder="ex: xxx@gmail.com" required
+			<input type="email" class="form-control" id="email_addr_repeat" name="femail_addr_repeat" placeholder="ex: xxx@gmail.com" required
 			oninput="verifyEmail(this)">
 		</div>
 	</div>
 
 	<div class="form-group">
-		<label class="col-sm-2 control-label" id="birth">5. 生日:</label>
+		<label for="birth_dt" class="col-sm-2 control-label" id="birth">5. 生日:</label>
 		<div class="col-sm-3">
-			<input type="date" class="form-control" id="birth_dt" name="birth_dt" placeholder="mm-dd-yyyy" required>
+			<input type="date" class="form-control" id="birth_dt" name="fbirth_dt" placeholder="mm-dd-yyyy" required>
 		</div>
 	</div>
 
 	<div class="form-group">
-		<label class="col-sm-2 control-label" id="phonenum">6. 手機號碼:</label>
+		<label for="phone" class="col-sm-2 control-label" id="phonenum">6. 手機號碼:</label>
 		<div class="col-sm-3">
-			<input type="tel" class="form-control" id="phone" name="phone" maxlength="10" pattern="[0-9]{10}" placeholder="09xx-xxx-xxx" required>
+			<input type="tel" class="form-control" id="phone" name="fphone" maxlength="10" pattern="[0-9]{10}" placeholder="09xx-xxx-xxx" required>
 		</div>
 	</div>
 
 	<div class="form-group">
-		<label class="col-sm-2 control-label" id="age">7. 年齡:</label>
+		<label for="ages" class="col-sm-2 control-label" id="age">7. 年齡:</label>
 		<div class="col-sm-3">
-			<input type="number" class="form-control" id="ages" name="ages" value="20" min="1" max="100" required>
+			<input type="number" class="form-control" id="ages" name="fages" value="20" min="1" max="100" required>
 		</div>
 	</div>
 
 	<div class="form-group">
-		<label class="col-sm-2 control-label" id="website">8. 個人網頁:</label>
+		<label for="web" class="col-sm-2 control-label" id="website">8. 個人網頁:</label>
 		<div class="col-sm-3">
-			<input type="url" class="form-control" id="web" name="web"
+			<input type="url" class="form-control" id="web" name="fweb"
 			title="Personal website is not neccessory if you don't have one.">
 		</div>
 	</div>
@@ -134,13 +136,12 @@
 	</div>
 
 	<div class="form-group">
-		<label class="col-sm-2 control-label" id="coursenum">10. 修課數目:</label>
+		<label for="courses" class="col-sm-2 control-label" id="coursenum">10. 修課數目:</label>
 		<div class="col-sm-3">
-			<input type="number" class="form-control" id="courses" name="courses" value="0" min="1" max="20" required>
+			<input type="number" class="form-control" id="courses" name="fcourses" value="0" min="1" max="20" required>
 		</div>
 	</div>
 
-	<form class="form-inline">
 		<div class="form-group">
 
 			<label class="col-sm-2 control-label" id="fee">總修課費用:</label>
@@ -153,11 +154,10 @@
 			</div>
 
 		</div>
-	</form>
 	<br>
 
-	<div class="row table-responsive">
-	<div class="col-sm-6">
+	<div class="form-group">
+	<div class="col-sm-6 table-responsive">
 	<table class="table table-bordered" cellspacing="0">
 		<!-- <caption id="title2"> -->
 			<label class="control-label" id="feeling">11. 關於行動政大APP v2.:</label>
@@ -341,33 +341,37 @@
 	</div>
 	</div>
 
-	<div class="row">
+	<div class="form-group">
 	<div class="col-sm-6">
-		<label class="control-label" id="opinion">12. 想對我們說？</label>
-		<textarea class="form-control" rows="3"></textarea>
+		<label for="opi" class="control-label" id="opinion">12. 想對我們說？</label>
+		<textarea id="opi" name="fopinion" class="form-control" rows="3"></textarea>
 	</div>
 	</div>
 	<br>
 
-	<div class="row">
+	<div class="form-group">
 	<div class="col-sm-6">
-	<label class="control-label" id="rate">13. 給個評價吧!</label>
-	<select class="form-control">
-	  <option>  0%</option>
-	  <option> 20%</option>
-	  <option> 40%</option>
-	  <option> 60%</option>
-	  <option> 80%</option>
-		<option>100%</option>
-	</select>
+		<label for="rte" class="control-label" id="rate">13. 給個評價吧!</label>
+		<select id="rte" name="frate" class="form-control">
+		  <option>  0%</option>
+		  <option> 20%</option>
+		  <option> 40%</option>
+		  <option> 60%</option>
+		  <option> 80%</option>
+			<option>100%</option>
+		</select>
 	</div>
 	</div>
 
 	<br><br>
 
-	<div class="progress">
-	<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-		60%
+	<div class="row">
+	<div class="col-sm-12">
+		<div class="progress">
+		<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+			60%
+		</div>
+		</div>
 	</div>
 	</div>
 
@@ -378,19 +382,30 @@
 	  </ul>
 	</nav>
 
+	<!-- <button type="submit" class="btn btn-default">Submit</button> -->
+
 	<div class="col-sm-offset-5 col-sm-2">
 			<input id="submit" class="btn-danger form-control" type="submit" value="Submit"></input>
+			<!-- <button id="submit" class="btn-danger form-control" value="Submit">Submit</button> -->
 	</div>
 	<br>
 	<br>
-
-	<div id="myAlert" class="alert alert-success fade flash" data-alert="alert">
-	    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-	    <strong>Well done!</strong>
-			You successfully complete this questionnaire of 行動政大APP.
-	</div>
 
 </form>
+</div>
+
+<!-- <div id="myAlert message" class="alert alert-success fade flash" data-alert="alert">
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		<strong>Well done!</strong>
+		You successfully complete this questionnaire of 行動政大APP.
+</div> -->
+
+<div style="position: fixed; top: 0; right: 0">
+		<div id="myAlert" class="alert alert-success fade flash" data-alert="alert">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<strong>Well done!</strong>
+				You successfully complete this questionnaire of 行動政大APP.
+		</div>
 </div>
 
 </div>
@@ -398,7 +413,7 @@
 <script>
 function verifyEmail(input) {
 	input = input.srcElement;
-	if (input.value != document.getElementById('email_addr').value) {
+	if (input.value != document.getElementById('femail_addr').value) {
 		input.setCustomValidity('The two email addresses must match.');
 	} else {
 		// input is valid -- reset the error message
