@@ -10,7 +10,10 @@
 <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
 <script src="http://code.jquery.com/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script></head>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script language="JavaScript" src="gen_validatorv4.js"
+    type="text/javascript" xml:space="preserve"></script>
+</head>
 
 <body background="restaurant-fromsubtlepatterns.png">
 <!--------------------------------------------------------------------->
@@ -43,30 +46,30 @@
 <!-- action="demo_form.asp" method="post" -->
 <!-- novalidate oninput="total.value = (courses.valueAsNumber * 1020 * 3)" -->
 <div class="row">
-<form class="form-horizontal" role="FormofNCCUAPP">
+<form class="form-horizontal" role="FormofNCCUAPP" name="FormofNCCUAPP" id="FormofNCCUAPP">
 
-	<div class="panel panel-danger">
+	<div id="BQ1" class="panel panel-danger">
 	  <div class="panel-heading"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 第一大題-使用裝置的基本資料</div>
 	  <div class="panel-body">
 
 			<div class="form-group">
 				<label for="dv_nam" class="col-sm-2 control-label" id="device_name">1. 您使用的裝置名稱:</label>
-				<div class="col-sm-5">
-					<input  type="text" class="form-control" id="dv_nam" name="dv_nam" placeholder="iPhone 6s, htc One M9 or Samsung Galaxy Note 5, etc." required>
+				<div class="col-sm-6">
+					<input  type="text" class="form-control" id="dv_nam" name="dv_nam" placeholder="iPhone 6s, htc One M9 or Samsung Galaxy Note 5, etc. （＊此為必填問題！）">
 				</div>
 			</div>
 
 			<div class="form-group">
 				<label for="dv_os" class="col-sm-2 control-label" id="device_os">2. 您使用的裝置系統版本:</label>
-				<div class="col-sm-5">
-					<input  type="text" class="form-control" id="dv_os" name="dv_os" placeholder="iOS 9.0.1 or Android5.0, etc." required>
+				<div class="col-sm-6">
+					<input  type="text" class="form-control" id="dv_os" name="dv_os" placeholder="iOS 9.0.1 or Android5.0, etc. （＊此為必填問題！）">
 				</div>
 			</div>
 
 	  </div>
 	</div>
 
-	<div class="panel panel-warning">
+	<div id="BQ2" class="panel panel-warning">
 		<div class="panel-heading"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 第二大題-各項功能滿意度調查</div>
 		<div class="panel-body">
 
@@ -74,7 +77,7 @@
 			<div class="col-sm-8 table-responsive">
 			<table class="table table-bordered" cellspacing="0">
 				<!-- <caption id="title2"> -->
-					<label class="control-label" id="feeling">3. 關於行動政大APP v2.:</label><br><br>
+					<label class="control-label" id="feeling">3. 關於行動政大APP v2.: <font color="red">（＊此為必填問題！）</font></label><br><br>
 								<!-- <span id="req_2" class="req">*</span>
 							</caption> -->
 				<thead>
@@ -92,7 +95,7 @@
 								<tr class="statement1">
 						<th><label for="s1">最新消息</label></th>
 										<td title="1">
-							<input id="field2_1" name="s1" type="radio" tabindex="1" value="1" onchange="handleInput(this);"/>
+							<input id="field2_1" name="s1" type="radio" tabindex="1" value="1" onchange="handleInput(this);" required required/>
 						</td>
 										<td title="2">
 							<input id="field2_2" name="s1" type="radio" tabindex="2" value="2" onchange="handleInput(this);"/>
@@ -110,7 +113,7 @@
 								<tr class="alt statement2">
 						<th><label for="s2">行事曆</label></th>
 										<td title="1">
-							<input id="field3_1" name="s2" type="radio" tabindex="6" value="1" onchange="handleInput(this);"/>
+							<input id="field3_1" name="s2" type="radio" tabindex="6" value="1" onchange="handleInput(this);" required/>
 						</td>
 										<td title="2">
 							<input id="field3_2" name="s2" type="radio" tabindex="7" value="2" onchange="handleInput(this);"/>
@@ -128,7 +131,7 @@
 								<tr class="statement3">
 						<th><label for="s3">個人訊息</label></th>
 										<td title="1">
-							<input id="field4_1" name="s3" type="radio" tabindex="11" value="1" onchange="handleInput(this);"/>
+							<input id="field4_1" name="s3" type="radio" tabindex="11" value="1" onchange="handleInput(this);" required/>
 						</td>
 										<td title="2">
 							<input id="field4_2" name="s3" type="radio" tabindex="12" value="2" onchange="handleInput(this);"/>
@@ -146,7 +149,7 @@
 								<tr class="alt statement4">
 						<th><label for="s4">課程表</label></th>
 										<td title="1">
-							<input id="field5_1" name="s4" type="radio" tabindex="16" value="1" onchange="handleInput(this);"/>
+							<input id="field5_1" name="s4" type="radio" tabindex="16" value="1" onchange="handleInput(this);" required/>
 						</td>
 										<td title="2">
 							<input id="field5_2" name="s4" type="radio" tabindex="17" value="2" onchange="handleInput(this);"/>
@@ -164,7 +167,7 @@
 								<tr class="statement5">
 						<th><label for="s5">課程查詢</label></th>
 										<td title="1">
-							<input id="field6_1" name="s5" type="radio" tabindex="21" value="1" onchange="handleInput(this);"/>
+							<input id="field6_1" name="s5" type="radio" tabindex="21" value="1" onchange="handleInput(this);" required/>
 						</td>
 										<td title="2">
 							<input id="field6_2" name="s5" type="radio" tabindex="22" value="2" onchange="handleInput(this);"/>
@@ -182,7 +185,7 @@
 								<tr class="alt statement6">
 						<th><label for="s6">活動報名查詢</label></th>
 										<td title="1">
-							<input id="field7_1" name="s6" type="radio" tabindex="26" value="1" onchange="handleInput(this);"/>
+							<input id="field7_1" name="s6" type="radio" tabindex="26" value="1" onchange="handleInput(this);" required/>
 						</td>
 										<td title="2">
 							<input id="field7_2" name="s6" type="radio" tabindex="27" value="2" onchange="handleInput(this);"/>
@@ -200,7 +203,7 @@
 								<tr class="statement7">
 						<th><label for="s7">場地租借查詢</label></th>
 										<td title="1">
-							<input id="field8_1" name="s7" type="radio" tabindex="31" value="1" onchange="handleInput(this);"/>
+							<input id="field8_1" name="s7" type="radio" tabindex="31" value="1" onchange="handleInput(this);" required/>
 						</td>
 										<td title="2">
 							<input id="field8_2" name="s7" type="radio" tabindex="32" value="2" onchange="handleInput(this);"/>
@@ -218,7 +221,7 @@
 								<tr class="statement8">
 						<th><label for="s8">NCCU郵件</label></th>
 										<td title="1">
-							<input id="field9_1" name="s8" type="radio" tabindex="36" value="1" onchange="handleInput(this);"/>
+							<input id="field9_1" name="s8" type="radio" tabindex="36" value="1" onchange="handleInput(this);" required/>
 						</td>
 										<td title="2">
 							<input id="field9_2" name="s8" type="radio" tabindex="37" value="2" onchange="handleInput(this);"/>
@@ -236,7 +239,7 @@
 								<tr class="statement9">
 						<th><label for="s9">數位學習WM3</label></th>
 										<td title="1">
-							<input id="field10_1" name="s9" type="radio" tabindex="41" value="1" onchange="handleInput(this);"/>
+							<input id="field10_1" name="s9" type="radio" tabindex="41" value="1" onchange="handleInput(this);" required/>
 						</td>
 										<td title="2">
 							<input id="field10_2" name="s9" type="radio" tabindex="42" value="2" onchange="handleInput(this);"/>
@@ -254,7 +257,7 @@
 								<tr class="statement10">
 						<th><label for="s10">交通資訊</label></th>
 										<td title="1">
-							<input id="field11_1" name="s10" type="radio" tabindex="46" value="1" onchange="handleInput(this);"/>
+							<input id="field11_1" name="s10" type="radio" tabindex="46" value="1" onchange="handleInput(this);" required/>
 						</td>
 										<td title="2">
 							<input id="field11_2" name="s10" type="radio" tabindex="47" value="2" onchange="handleInput(this);"/>
@@ -272,7 +275,7 @@
 								<tr class="statement11">
 						<th><label for="s11">緊急通報</label></th>
 										<td title="1">
-							<input id="field12_1" name="s11" type="radio" tabindex="51" value="1" onchange="handleInput(this);"/>
+							<input id="field12_1" name="s11" type="radio" tabindex="51" value="1" onchange="handleInput(this);" required/>
 						</td>
 										<td title="2">
 							<input id="field12_2" name="s11" type="radio" tabindex="52" value="2" onchange="handleInput(this);"/>
@@ -290,7 +293,7 @@
 								<tr class="statement12">
 						<th><label for="s12">圖書館</label></th>
 										<td title="1">
-							<input id="field13_1" name="s12" type="radio" tabindex="56" value="1" onchange="handleInput(this);"/>
+							<input id="field13_1" name="s12" type="radio" tabindex="56" value="1" onchange="handleInput(this);" required/>
 						</td>
 										<td title="2">
 							<input id="field13_2" name="s12" type="radio" tabindex="57" value="2" onchange="handleInput(this);"/>
@@ -308,7 +311,7 @@
 								<tr class="statement13">
 						<th><label for="s13">教職員通訊錄</label></th>
 										<td title="1">
-							<input id="field14_1" name="s13" type="radio" tabindex="61" value="1" onchange="handleInput(this);"/>
+							<input id="field14_1" name="s13" type="radio" tabindex="61" value="1" onchange="handleInput(this);" required/>
 						</td>
 										<td title="2">
 							<input id="field14_2" name="s13" type="radio" tabindex="62" value="2" onchange="handleInput(this);"/>
@@ -326,7 +329,7 @@
 								<tr class="statement14">
 						<th><label for="s14">政大生活圈</label></th>
 										<td title="1">
-							<input id="field15_1" name="s14" type="radio" tabindex="66" value="1" onchange="handleInput(this);"/>
+							<input id="field15_1" name="s14" type="radio" tabindex="66" value="1" onchange="handleInput(this);" required/>
 						</td>
 										<td title="2">
 							<input id="field15_2" name="s14" type="radio" tabindex="67" value="2" onchange="handleInput(this);"/>
@@ -344,7 +347,7 @@
 								<tr class="statement15">
 						<th><label for="s15">租屋資訊</label></th>
 										<td title="1">
-							<input id="field16_1" name="s15" type="radio" tabindex="71" value="1" onchange="handleInput(this);"/>
+							<input id="field16_1" name="s15" type="radio" tabindex="71" value="1" onchange="handleInput(this);" required/>
 						</td>
 										<td title="2">
 							<input id="field16_2" name="s15" type="radio" tabindex="72" value="2" onchange="handleInput(this);"/>
@@ -362,7 +365,7 @@
 								<tr class="statement16">
 						<th><label for="s16">郵件代收查詢</label></th>
 										<td title="1">
-							<input id="field17_1" name="s16" type="radio" tabindex="76" value="1" onchange="handleInput(this);"/>
+							<input id="field17_1" name="s16" type="radio" tabindex="76" value="1" onchange="handleInput(this);" required/>
 						</td>
 										<td title="2">
 							<input id="field17_2" name="s16" type="radio" tabindex="77" value="2" onchange="handleInput(this);"/>
@@ -380,7 +383,7 @@
 								<tr class="statement17">
 						<th><label for="s17">失物招領查詢</label></th>
 										<td title="1">
-							<input id="field18_1" name="s17" type="radio" tabindex="81" value="1" onchange="handleInput(this);"/>
+							<input id="field18_1" name="s17" type="radio" tabindex="81" value="1" onchange="handleInput(this);" required/>
 						</td>
 										<td title="2">
 							<input id="field18_2" name="s17" type="radio" tabindex="82" value="2" onchange="handleInput(this);"/>
@@ -403,98 +406,102 @@
 		</div>
 	</div>
 
-
-
-	<div class="panel panel-info">
+	<div id="BQ3" class="panel panel-info">
 		<div class="panel-heading"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 第三大題-您最常使用的功能</div>
 		<div class="panel-body">
+
+			<div class="row">
+			<div class="col-sm-6">
+				<label class="control-label">4. 請勾選您在行動政大APP v2.最常使用的功能:<font color="red">（＊此為必填問題！）</font></label>
+			</div>
+			</div>
 
 			<!-- 複選 -->
 			<div class="form-group">
 
 				<div class="col-sm-2">
 					<!-- news -->
-					<input type="checkbox" id="chk_btn1" name="freq_func" value="01">
+					<input type="checkbox" id="chk_btn1" name="freq_func1" value="01">
 					<label for="chk_btn1" id="chk_lbl1">最新消息</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- calendar -->
-					<input type="checkbox" id="chk_btn2" name="freq_func" value="02">
+					<input type="checkbox" id="chk_btn2" name="freq_func2" value="02">
 					<label for="chk_btn2" id="chk_lbl2">行事曆</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- message -->
-					<input type="checkbox" id="chk_btn3" name="freq_func" value="03">
+					<input type="checkbox" id="chk_btn3" name="freq_func3" value="03">
 					<label for="chk_btn3" id="chk_lbl3">個人訊息</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- coursecalendar -->
-					<input type="checkbox" id="chk_btn4" name="freq_func" value="04">
+					<input type="checkbox" id="chk_btn4" name="freq_func4" value="04">
 					<label for="chk_btn4" id="chk_lbl4">課程表</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- coursesearch -->
-					<input type="checkbox" id="chk_btn5" name="freq_func" value="05">
+					<input type="checkbox" id="chk_btn5" name="freq_func5" value="05">
 					<label for="chk_btn5" id="chk_lbl5">課程查詢</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- activitysearch -->
-					<input type="checkbox" id="chk_btn6" name="freq_func" value="06">
+					<input type="checkbox" id="chk_btn6" name="freq_func6" value="06">
 					<label for="chk_btn6" id="chk_lbl6">活動報名查詢</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- spacesearch -->
-					<input type="checkbox" id="chk_btn7" name="freq_func" value="07">
+					<input type="checkbox" id="chk_btn7" name="freq_func7" value="07">
 					<label for="chk_btn7" id="chk_lbl7">場地租借查詢</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- nccumail -->
-					<input type="checkbox" id="chk_btn8" name="freq_func" value="08">
+					<input type="checkbox" id="chk_btn8" name="freq_func8" value="08">
 					<label for="chk_btn8" id="chk_lbl8">NCCU郵件</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- wm3 -->
-					<input type="checkbox" id="chk_btn9" name="freq_func" value="09">
+					<input type="checkbox" id="chk_btn9" name="freq_func9" value="09">
 					<label for="chk_btn9" id="chk_lbl9">數位學習WM3</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- transportation -->
-					<input type="checkbox" id="chk_btn10" name="freq_func" value="10">
+					<input type="checkbox" id="chk_btn10" name="freq_func10" value="10">
 					<label for="chk_btn10" id="chk_lbl10">交通資訊</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- emergency -->
-					<input type="checkbox" id="chk_btn11" name="freq_func" value="11">
+					<input type="checkbox" id="chk_btn11" name="freq_func11" value="11">
 					<label for="chk_btn11" id="chk_lbl11">緊急通報</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- library -->
-					<input type="checkbox" id="chk_btn12" name="freq_func" value="12">
+					<input type="checkbox" id="chk_btn12" name="freq_func12" value="12">
 					<label for="chk_btn12" id="chk_lbl12">圖書館</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- teachercontact -->
-					<input type="checkbox" id="chk_btn13" name="freq_func" value="13">
+					<input type="checkbox" id="chk_btn13" name="freq_func13" value="13">
 					<label for="chk_btn13" id="chk_lbl13">教職員通訊錄</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- ncculife -->
-					<input type="checkbox" id="chk_btn14" name="freq_func" value="14">
+					<input type="checkbox" id="chk_btn14" name="freq_func14" value="14">
 					<label for="chk_btn14" id="chk_lbl14">政大生活圈</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- houseinfo -->
-					<input type="checkbox" id="chk_btn15" name="freq_func" value="15">
+					<input type="checkbox" id="chk_btn15" name="freq_func15" value="15">
 					<label for="chk_btn15" id="chk_lbl15">租屋資訊</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- mailsearch -->
-					<input type="checkbox" id="chk_btn16" name="freq_func" value="16">
+					<input type="checkbox" id="chk_btn16" name="freq_func16" value="16">
 					<label for="chk_btn16" id="chk_lbl16">郵件代收查詢</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- thingsearch -->
-					<input type="checkbox" id="chk_btn17" name="freq_func" value="17">
+					<input type="checkbox" id="chk_btn17" name="freq_func17" value="17">
 					<label for="chk_btn17" id="chk_lbl17">失物招領查詢</label><br>
 				</div>
 
@@ -503,20 +510,20 @@
 		</div>
 	</div>
 
-	<div class="panel panel-success">
+	<div id="BQ4" class="panel panel-success">
 		<div class="panel-heading"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 第四大題-使用上的疑問與建議</div>
 		<div class="panel-body">
 
 			<div class="form-group">
-			<div class="col-sm-6">
-				<label for="advc1" class="control-label" id="opinion1">5. 您目前於安裝、使用上有遇到什麼問題嗎?</label>
+			<div class="col-sm-7">
+				<label for="advc1" class="control-label" id="opinion1">5. 您目前於安裝、使用上有遇到什麼問題嗎?<font color="red">（＊此為必填問題，無意見請填“無”，限200字！）</font></label>
 				<textarea id="advc1" name="advc1" class="form-control" rows="3" placeholder="e.g. iOS 9.0.1版本安裝一直出現錯誤！"></textarea>
 			</div>
 			</div>
 
 			<div class="form-group">
-			<div class="col-sm-6">
-				<label for="advc2" class="control-label" id="opinion2">6. 您對行動政大APP提供的18個功能有無建議呢?</label>
+			<div class="col-sm-7">
+				<label for="advc2" class="control-label" id="opinion2">6. 您對行動政大APP提供的18個功能有無建議呢? <font color="red">（＊此為必填問題，無意見請填“無”，限200字！）</font></label>
 				<textarea id="advc2" name="advc2" class="form-control" rows="3" placeholder="e.g. 政大生活圈功能，可以加入商店星星數評價！"></textarea>
 			</div>
 			</div>
@@ -524,13 +531,13 @@
 		</div>
 	</div>
 
-	<div class="panel panel-danger">
+	<div id="BQ5" class="panel panel-danger">
 		<div class="panel-heading"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 第五大題-發想新功能吧</div>
 		<div class="panel-body">
 
 			<div class="form-group">
-			<div class="col-sm-6">
-				<label for="adv_new" class="control-label" id="opinion3">7. 您覺得行動政大APP還可以為全校教職員生，新增什麼有趣暨方便的功能呢？</label>
+			<div class="col-sm-9">
+				<label for="adv_new" class="control-label" id="opinion3">7. 您覺得行動政大APP還可以為全校教職員生，新增什麼有趣暨方便的功能呢？<font color="red">（＊此為必填問題，無意見請填“無”，限200字！）</font></label>
 				<textarea id="adv_new" name="adv_new" class="form-control" rows="3" placeholder="e.g. 我們很需要二手教科書的拍賣APP平台！"></textarea>
 			</div>
 			</div>
@@ -538,13 +545,13 @@
 		</div>
 	</div>
 
-	<div class="panel panel-warning">
+	<div id="BQ6" class="panel panel-warning">
 		<div class="panel-heading"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 第六大題-整體滿意度大調查</div>
 		<div class="panel-body">
 
 				<div class="form-group">
 				<div class="col-sm-6">
-					<label for="ovall_sat" class="control-label" id="rate">8. 行動政大APP 2.0版本，給您的滿意度為何？</label>
+					<label for="ovall_sat" class="control-label" id="rate">8. 行動政大APP 2.0版本，給您的滿意度為何？ <font color="red">（＊此為必填問題！）</font></label>
 					<select id="ovall_sat" name="ovall_sat" class="form-control">
 						<option>  0%</option>
 						<option> 20%</option>
@@ -561,11 +568,11 @@
 
 	<br><br>
 
-	<div class="row">
+	<!-- <div class="row">
 	<div class="col-sm-12">
 		<div class="progress">
-		<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-			60%
+		<div id="bars" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+			70%
 		</div>
 		</div>
 	</div>
@@ -573,13 +580,20 @@
 
 	<nav>
 	  <ul class="pager">
-	    <li><a href="#">Previous</a></li>
-	    <li><a href="#">Next</a></li>
+	    <li id="page1"><a href="#">Previous</a></li>
+	    <li id="page2"><a href="#">Next</a></li>
 	  </ul>
-	</nav>
+	</nav> -->
+
+	<!-- <div class="row">
+	<div class="col-sm-2">
+		<button class="btn-primary" id="page1">Previous</button>
+		<button class="btn-primary" id="page2">Next</button>
+	</div>
+	</div> -->
 
 	<!-- <button type="submit" class="btn btn-default">Submit</button> -->
-
+<!-- onclick="confirmFunction()" -->
 	<div class="col-sm-offset-5 col-sm-2">
 			<input id="submit" class="btn-danger form-control" type="submit" value="Submit"></input>
 			<!-- <button id="submit" class="btn-danger form-control" value="Submit">Submit</button> -->
@@ -596,41 +610,26 @@
 		You successfully complete this questionnaire of 行動政大APP.
 </div> -->
 
-<div style="position: fixed; top: 0; right: 0">
+<!-- <div style="position: fixed; top: 0; right: 0">
 		<div id="myAlert" class="alert alert-success fade flash" data-alert="alert">
 				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 				<strong>Well done!</strong>
 				You successfully complete this questionnaire of 行動政大APP.
 		</div>
-</div>
+</div> -->
 
 </div>
 
 <script>
-function verifyEmail(input) {
-	input = input.srcElement;
-	if (input.value != document.getElementById('femail_addr').value) {
-		input.setCustomValidity('The two email addresses must match.');
-	} else {
-		// input is valid -- reset the error message
-		input.setCustomValidity('');
-	}
-}
-</script>
-
-<script>
-  function showAlert(){
-    $("#myAlert").addClass("in")
-	}
-	function closeAlert(){
-		$(".flash").fadeTo(500, 0).slideUp(500, function(){
-		      $(this).removeclass("in");
-		});
-	}
-	$('#submit').click(function() {
-    showAlert();
-		setTimeout(closeAlert, 3000);
-	});
+// 	function confirmFunction() {
+// 	    var x;
+// 	    if (confirm("確認已填答完畢，送出？") == true) {
+// 	        x = "You pressed OK!";
+// 	    } else {
+// 	        x = "You pressed Cancel!";
+// 	    }
+// 	    // document.getElementById("demo").innerHTML = x;
+// }
 
 
 // <!-- window.setTimeout(function() {
@@ -640,7 +639,110 @@ function verifyEmail(input) {
 // }, 5000); -->
 </script>
 
-<script>
+<br>
+<!-- ------------------------------------------------------------------->
+<!-- <footer>
+	<img src="http://ameydhar.github.io/index_files/teaching.jpg" alt="程式語言集合"><br>
+	<a href="http://en.wikipedia.org/wiki/Programming_language" (target="_blank")>程式語言定義？ WikiPedia it！</a>
+	<div class="social-buttons">
+		<a href="http://www.facebook.com.tw">讚</a> | <a href="http://www.youtube.com.tw">+1</a>
+	</div>
+</footer> -->
+
+<footer>
+	<p>Design by RichardTsai. Copyright (c) 2015 nccu.edu.tw. All rights reserved. </P>
+</footer>
+
+<script language="JavaScript" type="text/javascript"
+xml:space="preserve">//<![CDATA[
+//You should create the validator only after the definition of the HTML form
+var frmvalidator  = new Validator("FormofNCCUAPP");
+frmvalidator.addValidation("dv_nam","req","1. 請輸入您使用的裝置名稱！");
+frmvalidator.addValidation("dv_nam","maxlen=50",	"1. 裝置名稱的最大輸入長度為：50！");
+// frmvalidator.addValidation("dv_nam","alpha","Alphabetic chars only");
+
+frmvalidator.addValidation("dv_os","req","2. 請輸入您使用的裝置系統版本！");
+frmvalidator.addValidation("dv_os","maxlen=50",	"2. 裝置系統版本的最大輸入長度為：50！");
+
+frmvalidator.addValidation("advc1","req","5. 請輸入安裝、使用上問題（無意見請填“無”）！");
+frmvalidator.addValidation("advc1","maxlen=200",	"5. 安裝、使用上問題的最大輸入長度為：200！");
+
+frmvalidator.addValidation("advc2","req","6. 請輸入18個功能建議（無意見請填“無”）！");
+frmvalidator.addValidation("advc2","maxlen=200",	"6. 18個功能建議的最大輸入長度為：200！");
+
+frmvalidator.addValidation("adv_new","req","7. 請輸入功能發想（無意見請填“無”）！");
+frmvalidator.addValidation("adv_new","maxlen=200",	"7. 功能發想的最大輸入長度為：200！");
+
+frmvalidator.addValidation("Address","maxlen=50");
+frmvalidator.addValidation("Country","dontselect=000");
+
+function confirmFunction() {
+  var x;
+  if (confirm("確認已填答完畢，送出？") == true) {
+      x = "You pressed OK!";
+  } else {
+      x = "You pressed Cancel!";
+  }
+  // document.getElementById("demo").innerHTML = x;
+}
+
+// function showAlert(){
+// 	$("#myAlert").addClass("in")
+// }
+// function closeAlert(){
+// 	$(".flash").fadeTo(500, 0).slideUp(500, function(){
+// 				$(this).removeclass("in");
+// 	});
+// }
+// $('#submit').click(function() {
+// 	confirmFunction()
+// 	// showAlert();
+// 	// setTimeout(closeAlert, 3000);
+// });
+
+</script>
+
+<!-- <script>
+$(document).ready(function() {
+    $('#page1').hide();
+		$('#BQ4').hide();
+		$('#BQ5').hide();
+		$('#BQ6').hide();
+		$('#submit').hide();
+});
+
+$('#page1').click(function() {
+	$('#page1').hide();
+	$('#page2').show();
+	$('#BQ1').show();
+	$('#BQ2').show();
+	$('#BQ3').show();
+	$('#BQ4').hide();
+	$('#BQ5').hide();
+	$('#BQ6').hide();
+	$('#submit').hide();
+	$('div#bars').attr("aria-valuenow", "70");
+	$('div#bars').attr("style", "width: 70%;");
+	$('div#bars').text("70%");
+});
+$('#page2').click(function() {
+	// if () {
+	//
+	// }
+		$('#page1').show();
+		$('#page2').hide();
+		$('#BQ1').hide();
+		$('#BQ2').hide();
+		$('#BQ3').hide();
+		$('#BQ4').show();
+		$('#BQ5').show();
+		$('#BQ6').show();
+		$('#submit').show();
+		$('div#bars').attr("aria-valuenow", "100");
+		$('div#bars').attr("style", "width: 100%;");
+		$('div#bars').text("100%");
+});
+
 $('#Chi').click(function() {
 	$('.panel-heading').html( "行動政大APP-使用經驗之問卷調查" );
 	$('.panel-body').text( "請您就使用此行動政大APP的經驗，提供我們一些問卷回饋，將有助於我們改善得更好！" );
@@ -677,20 +779,7 @@ $('#Eng').click(function() {
 	$('#opinion').text( "12. Do you want to say something to us?" );
 	$('#rate').text( "13. Rate us!" );
 });
-</script>
+</script> -->
 
-<br>
-<!-- ------------------------------------------------------------------->
-<!-- <footer>
-	<img src="http://ameydhar.github.io/index_files/teaching.jpg" alt="程式語言集合"><br>
-	<a href="http://en.wikipedia.org/wiki/Programming_language" (target="_blank")>程式語言定義？ WikiPedia it！</a>
-	<div class="social-buttons">
-		<a href="http://www.facebook.com.tw">讚</a> | <a href="http://www.youtube.com.tw">+1</a>
-	</div>
-</footer> -->
-
-<footer>
-	<p>Design by RichardTsai. Copyright (c) 2015 nccu.edu.tw. All rights reserved. </P>
-</footer>
 </body>
 </html>
