@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="bootstrap-theme.css">
 <link href='https://fonts.googleapis.com/css?family=Raleway:900' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="./bower_components/five-star-rating/css/rating.min.css">
 <!-- <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
 <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
 <script src="http://code.jquery.com/jquery.min.js"></script>
@@ -64,7 +65,7 @@
 			<div class="form-group">
 				<label for="dv_os" class="col-sm-3 control-label" id="device_os">2. 您使用的裝置系統版本:<font color="red">＊（限50字！）</font></label>
 				<div class="col-sm-6">
-					<input  type="text" class="form-control" id="dv_os" name="dv_os" placeholder="iOS 9.0.1 or Android5.0, etc.">
+					<input type="text" class="form-control" id="dv_os" name="dv_os" placeholder="iOS 9.0.1 or Android5.0, etc.">
 				</div>
 				<div style="color:red" id='FormofNCCUAPP_dv_os_errorloc' class="error_strings"></div>
 			</div>
@@ -425,89 +426,91 @@
 
 				<div class="col-sm-2">
 					<!-- news -->
-					<input type="checkbox" id="chk_btn1" name="features[]" value="01">
+					<input type="checkbox" id="chk_btn1" name="features" value="01">
 					<label for="chk_btn1" id="chk_lbl1">最新消息</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- calendar -->
-					<input type="checkbox" id="chk_btn2" name="features[]" value="02">
+					<input type="checkbox" id="chk_btn2" name="features" value="02">
 					<label for="chk_btn2" id="chk_lbl2">行事曆</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- message -->
-					<input type="checkbox" id="chk_btn3" name="features[]" value="03">
+					<input type="checkbox" id="chk_btn3" name="features" value="03">
 					<label for="chk_btn3" id="chk_lbl3">個人訊息</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- coursecalendar -->
-					<input type="checkbox" id="chk_btn4" name="features[]" value="04">
+					<input type="checkbox" id="chk_btn4" name="features" value="04">
 					<label for="chk_btn4" id="chk_lbl4">課程表</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- coursesearch -->
-					<input type="checkbox" id="chk_btn5" name="features[]" value="05">
+					<input type="checkbox" id="chk_btn5" name="features" value="05">
 					<label for="chk_btn5" id="chk_lbl5">課程查詢</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- activitysearch -->
-					<input type="checkbox" id="chk_btn6" name="features[]" value="06">
+					<input type="checkbox" id="chk_btn6" name="features" value="06">
 					<label for="chk_btn6" id="chk_lbl6">活動報名查詢</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- spacesearch -->
-					<input type="checkbox" id="chk_btn7" name="features[]" value="07">
+					<input type="checkbox" id="chk_btn7" name="features" value="07">
 					<label for="chk_btn7" id="chk_lbl7">場地租借查詢</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- nccumail -->
-					<input type="checkbox" id="chk_btn8" name="features[]" value="08">
+					<input type="checkbox" id="chk_btn8" name="features" value="08">
 					<label for="chk_btn8" id="chk_lbl8">NCCU郵件</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- wm3 -->
-					<input type="checkbox" id="chk_btn9" name="features[]" value="09">
+					<input type="checkbox" id="chk_btn9" name="features" value="09">
 					<label for="chk_btn9" id="chk_lbl9">數位學習WM3</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- transportation -->
-					<input type="checkbox" id="chk_btn10" name="features[]" value="10">
+					<input type="checkbox" id="chk_btn10" name="features" value="10">
 					<label for="chk_btn10" id="chk_lbl10">交通資訊</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- emergency -->
-					<input type="checkbox" id="chk_btn11" name="features[]" value="11">
+					<input type="checkbox" id="chk_btn11" name="features" value="11">
 					<label for="chk_btn11" id="chk_lbl11">緊急通報</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- library -->
-					<input type="checkbox" id="chk_btn12" name="features[]" value="12">
+					<input type="checkbox" id="chk_btn12" name="features" value="12">
 					<label for="chk_btn12" id="chk_lbl12">圖書館</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- teachercontact -->
-					<input type="checkbox" id="chk_btn13" name="features[]" value="13">
+					<input type="checkbox" id="chk_btn13" name="features" value="13">
 					<label for="chk_btn13" id="chk_lbl13">教職員通訊錄</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- ncculife -->
-					<input type="checkbox" id="chk_btn14" name="features[]" value="14">
+					<input type="checkbox" id="chk_btn14" name="features" value="14">
 					<label for="chk_btn14" id="chk_lbl14">政大生活圈</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- houseinfo -->
-					<input type="checkbox" id="chk_btn15" name="features[]" value="15">
+					<input type="checkbox" id="chk_btn15" name="features" value="15">
 					<label for="chk_btn15" id="chk_lbl15">租屋資訊</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- mailsearch -->
-					<input type="checkbox" id="chk_btn16" name="features[]" value="16">
+					<input type="checkbox" id="chk_btn16" name="features" value="16">
 					<label for="chk_btn16" id="chk_lbl16">郵件代收查詢</label><br>
 				</div>
 				<div class="col-sm-2">
 					<!-- thingsearch -->
-					<input type="checkbox" id="chk_btn17" name="features[]" value="17">
+					<input type="checkbox" id="chk_btn17" name="features" value="17">
 					<label for="chk_btn17" id="chk_lbl17">失物招領查詢</label><br>
 				</div>
+
+        <input type="text" class="form-control" id="freq_func" name="freq_func" value="">
 
 			</div>
 
@@ -558,8 +561,9 @@
 
 				<div class="form-group">
 				<div class="col-sm-6">
-					<label for="ovall_sat" class="control-label" id="rate">8. 關於行動政大APP 2.0版本，您的滿意度為何？ (選擇數字代表滿意度星星數<span class="glyphicon glyphicon-star" aria-hidden="true">)</span><font color="red">＊</font></label>
-					<select id="ovall_sat" name="ovall_sat" class="form-control">
+					<label for="ovall_sat" class="control-label" id="rate">8. 關於行動政大APP 2.0版本，您的滿意度為何？<font color="red">＊</font></label>
+					<ul class="c-rating"></ul>
+          <!-- <select id="ovall_sat" name="ovall_sat" class="form-control">
 						<option>  請選擇數字</option>
 						<option>  0</option>
 						<option>  1</option>
@@ -567,7 +571,7 @@
 						<option>  3</option>
 						<option>  4</option>
 						<option>  5</option>
-					</select>
+					</select> -->
 					<div style="color:red" id='FormofNCCUAPP_ovall_sat_errorloc' class="error_strings"></div>
 				</div>
 				</div>
@@ -575,7 +579,8 @@
 		</div>
 	</div>
 
-	<br><br>
+
+  <br><br>
 
 	<!-- <div class="row">
 	<div class="col-sm-12">
@@ -629,7 +634,7 @@
 
 </div>
 
-<script>
+<!-- <script>
 // 	function confirmFunction() {
 // 	    var x;
 // 	    if (confirm("確認已填答完畢，送出？") == true) {
@@ -645,8 +650,8 @@
 //   $(".flash").fadeTo(500, 0).slideUp(500, function(){
 //       $(this).toggle();
 //   });
-// }, 5000); -->
-</script>
+// }, 5000);
+</script> -->
 
 <br>
 <!-- ------------------------------------------------------------------->
@@ -661,6 +666,36 @@
 <footer>
 	<p>Design by RichardTsai. Copyright (c) 2015 nccu.edu.tw. All rights reserved. </P>
 </footer>
+
+<script src="./bower_components/five-star-rating/js/dist/rating.min.js"></script>
+<script>
+(function() {
+    'use strict';
+
+      var ratingElement = document.querySelector('.c-rating');
+      var currentRating = 0;
+      var maxRating = 5;
+      var callback = function(rating) { alert(rating); };
+      var r = rating(ratingElement, currentRating, maxRating, callback);
+
+  })();
+</script>
+
+<script>
+$(document).ready(function () {
+  $("#freq_func").hide();
+
+  $("input[name='features']").click(function () {
+    var freq_funcString = "";
+    $("input[name='features']:checked").each(function() {
+      freq_funcString += $(this).val() + "," ;
+    });
+    freq_funcString = freq_funcString.substring(0, freq_funcString.length - 1);
+
+    $("#freq_func").attr("value", freq_funcString);
+  });
+});
+</script>
 
 <script language="JavaScript" type="text/javascript"
 xml:space="preserve">//<![CDATA[
@@ -681,8 +716,8 @@ frmvalidator.addValidation("advc1","maxlen=200","*此欄位的最大輸入長度
 frmvalidator.addValidation("advc2","maxlen=200","*此欄位的最大輸入長度為：200！");
 frmvalidator.addValidation("adv_new","maxlen=200","*此欄位的最大輸入長度為：200！");
 
-chktestValidator.addValidation("features[]","selmin=1","*此欄位至少選擇1項！");
-chktestValidator.addValidation("features[]","selmax=17","*此欄位至少選擇17項！");
+chktestValidator.addValidation("features","selmin=1","*此欄位至少選擇1項！");
+chktestValidator.addValidation("features","selmax=17","*此欄位至少選擇17項！");
 
 frmvalidator.addValidation("ovall_sat","num","*您尚未評價滿意度！");
 
